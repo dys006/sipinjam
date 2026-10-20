@@ -6,7 +6,7 @@
  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
- <img src="{{ asset('images/logo.png') }}" alt="Logo Kampus" class="logo">
+ <img src="{{ asset('css/images/logo.png') }}" alt="Logo Kampus" class="logo">
  <h1>Profil Mahasiswa</h1>
  <table>
  <tr>

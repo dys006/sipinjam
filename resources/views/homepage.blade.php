@@ -10,11 +10,9 @@
         content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
     <meta name="generator" content="Astro v5.13.2" />
     <title>SiPinjam</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ asset('css/headers.css') }}" rel="stylesheet">
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <meta name="theme-color" content="#712cf9" />
     <style>

@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Category;
+use App\Models\Item;
+use App\Models\Loan;
 
 Route::get('/', function () {
     return view('homepage');
@@ -40,26 +43,24 @@ Route::get('/profil', function () {
    });
    
    Route::get('/alat', function () {
-    $alat = [
-    ['kode' => 'ALT-0001', 'nama' => 'Multimeter Digital', 'kategori' => 'Alat
-   Ukur', 'stok' => 5],
-    ['kode' => 'ALT-0002', 'nama' => 'Osiloskop', 'kategori' => 'Alat
-   Ukur', 'stok' => 0],
-    ['kode' => 'ALT-0003', 'nama' => 'Solder 40 Watt', 'kategori' => 'Alat
-   Solder', 'stok' => 8],
-    ['kode' => 'ALT-0004', 'nama' => 'Arduino Uno', 'kategori' =>
-   'Mikrokontroler', 'stok' => 12],
-    ['kode' => 'ALT-0005', 'nama' => 'Tang Potong', 'kategori' =>
-   'Perkakas', 'stok' => 3],
-   ['kode' => 'ALT-0006', 'nama' => 'Jangka Sorong', 'kategori' =>
-   'Alat Ukur', 'stok' => 10],
-   ['kode' => 'ALT-0007', 'nama' => 'Sensor Ultrasonik', 'kategori' =>
-   'Sensor', 'stok' => 0],
-    ];
+    $alat = Item::with('category')->orderBy('name')->get();
     return view('alat', ['alat' => $alat]);
    });
    
    Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('dashboard', [
+    'jumlahAlat' => Item::count(),
+    'jumlahKategori' => Category::count(),
+    'sedangDipinjam' => Loan::where('status', 'dipinjam')->count(),
+    ]);
    });
+   
+
+   Route::get('/login', function () {
+    return view('auth.login');
+   })->name('login');
+
+   Route::get('/daftar', function () {
+    return view('auth.daftar');
+   })->name('daftar');
    

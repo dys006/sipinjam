@@ -1,7 +1,11 @@
 @extends('layouts.app')
+
 @section('title', 'Daftar Alat')
+
 @section('content')
 <h3 class="mb-3">Daftar Alat Laboratorium</h3>
+<p class="text-muted">Jumlah jenis alat: {{ count($alat) }}</p>
+
 <div class="card shadow-sm">
     <div class="card-body">
         <table class="table table-striped table-hover align-middle mb-0">
@@ -11,27 +15,33 @@
                     <th>Kode</th>
                     <th>Nama Alat</th>
                     <th>Kategori</th>
+                    <th>Lokasi</th>
                     <th class="text-center">Stok</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($alat as $item)
+                @forelse ($alat as $item)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $item['kode'] }}</td>
-                    <td>{{ $item['nama'] }}</td>
-                    <td>{{ $item['kategori'] }}</td>
+                    <td>{{ $item->code }}</td>
+                    <td>{{ $item->name }}</td>
+                    <td>{{ $item->category->name }}</td>
+                    <td>{{ $item->location ?? '-' }}</td>
                     <td class="text-center">
-                        @if ($item['stok'] > 0)
-                        <span class="badge bg-success">{{ $item['stok']
-}}</span>
+                        @if ($item->stock > 0)
+                        <span class="badge bg-success">{{ $item->stock }}</span>
                         @else
                         <span class="badge bg-danger">Habis</span>
                         @endif
                     </td>
                 </tr>
-                @endforeach
+                @empty
+                <tr>
+                    <td colspan="6" class="text-center text-muted">Belum ada data alat.</td>
+                </tr>
+                @endforelse
             </tbody>
+            {{ $item->location ?? '-' }}
         </table>
     </div>
 </div>
