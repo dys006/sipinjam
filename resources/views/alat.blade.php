@@ -41,7 +41,6 @@
                 </tr>
                 @endforelse
             </tbody>
-            {{ $item->location ?? '-' }}
         </table>
     </div>
 </div>

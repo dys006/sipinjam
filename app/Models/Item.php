@@ -17,14 +17,18 @@ class Item extends Model
     {
         $query->where('stock', '>', 0);
     }
+    public function scopeLowStock(Builder $query): void
+    {
+        $query->where('stock', '<', 3)
+            ->where('stock', '>', 0);
+    }
     public function category(): BelongsTo
-{
- return $this->belongsTo(Category::class);
-}
-public function loans(): BelongsToMany
-{
- // 'loan_item' = nama tabel pivot, wajib ditulis karena berbeda dari tebakanLaravel (item_loan)
- return $this->belongsToMany(Loan::class, 'loan_item')->withPivot('qty')->withTimestamps();
-}
-
+    {
+        return $this->belongsTo(Category::class);
+    }
+    public function loans(): BelongsToMany
+    {
+        // 'loan_item' = nama tabel pivot, wajib ditulis karena berbeda dari tebakanLaravel (item_loan)
+        return $this->belongsToMany(Loan::class, 'loan_item')->withPivot('qty')->withTimestamps();
+    }
 }

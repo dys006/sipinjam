@@ -17,6 +17,7 @@
     <div class="wrapper">
         @include('layouts.partials.sidebar')
         <main class="content">
+            @include('layouts.partials.alerts')
             @yield('content')
         </main>
     </div>

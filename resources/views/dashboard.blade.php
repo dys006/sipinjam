@@ -35,5 +35,13 @@
             </div>
         </div>
     </div>
+    <div class="col-md-4">
+        <div class="card border-info shadow-sm">
+            <div class="card-body">
+                <div class="text-muted">Stok Menipis</div>
+                <div class="fs-2 fw-bold text-info">{{ $stokMenipis }}</div>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection

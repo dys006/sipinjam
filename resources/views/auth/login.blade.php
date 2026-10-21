@@ -1,72 +1,56 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Masuk</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #97cbe7;
-        }
-        .card-custom {
-            border-radius: 12px;
-            border: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            max-width: 420px;
-            width: 100%;
-        }
-        .btn-primary-custom {
-            background-color: #0d6efd;
-            border: none;
-            padding: 10px;
-            font-weight: 500;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Masuk | SiPinjam</title>
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 </head>
-<body class="d-flex align-items-center justify-content-center min-vh-100 p-3">
 
-    <div class="card card-custom p-4 bg-white">
-        <div class="card-body">
-            <h3 class="fw-bold text-center mb-1">Masuk</h3>
-            <p class="text-muted text-center small mb-4">Silakan masuk ke akun Anda</p>
-
-            <form action="{{ route('login') }}" method="POST">
-                @csrf
-                
-                <div class="mb-3">
-                    <label for="email" class="form-label text-secondary small fw-semibold">Email</label>
-                    <div class="input-group">
-                        <span class="input-group-text bg-white text-muted border-end-0">
-                            <i class="bi bi-envelope"></i>
-                        </span>
-                        <input type="email" class="form-control border-start-0 ps-0" id="email" name="email" placeholder="nama@email.com" required>
+<body class="bg-light d-flex align-items-center min-vh-100">
+    <main class="container" style="max-width: 420px">
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+                <h1 class="h4 text-center mb-4">Masuk ke SiPinjam</h1>
+                <form action="{{ route('login') }}" method="POST">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" value="{{
+old('email') }}" autofocus
+                            class="form-control @error('email') is-invalid
+@enderror">
+                        @error('email')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
-                </div>
-
-                <div class="mb-3">
-                    <label for="password" class="form-label text-secondary small fw-semibold">Password</label>
-                    <div class="input-group">
-                        <span class="input-group-text bg-white text-muted border-end-0">
-                            <i class="bi bi-lock"></i>
-                        </span>
-                        <input type="password" class="form-control border-start-0 ps-0" id="password" name="password" placeholder="Masukkan password" required>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" id="password" name="password"
+                            class="form-control @error('password') is-invalid
+@enderror">
+                        @error('password')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
-                </div>
-
-                <div class="mb-4 form-check">
-                    <input type="checkbox" class="form-check-input" id="remember" name="remember">
-                    <label class="form-check-label text-secondary small" for="remember">Ingat saya</label>
-                </div>
-
-                <button type="submit" class="btn btn-primary w-100 btn-primary-custom rounded-2 mb-4">Masuk</button>
-
-                <p class="text-center small text-muted mb-0">
-                    Belum punya akun? <a href="{{ url('/daftar') }}" class="text-decoration-none text-primary fw-semibold">Daftar di sini</a>
+                    <div class="form-check mb-3">
+                        <input type="checkbox" id="remember" name="remember"
+                            class="form-check-input">
+                        <label for="remember" class="form-check-label">Ingat
+                            saya</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w100">Masuk</button>
+                </form>
+                <p class="text-center mt-3 mb-0">
+                    Belum punya akun? <a href="{{ route('daftar') }}">Daftar di
+                        sini</a>
                 </p>
-            </form>
+            </div>
         </div>
-    </div>
+    </main>
 </body>
+
 </html>
