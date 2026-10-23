@@ -15,6 +15,10 @@ class DashboardController extends Controller
             'jumlahKategori' => Category::count(),
             'sedangDipinjam' => Loan::where('status', 'dipinjam')->count(),
             'stokMenipis' => Item::lowStock()->count(),
+
+            'peminjamanTerlambat' => Loan::where('status', 'dipinjam')
+                ->whereDate('due_date', '<', today())
+                ->count(),
         ]);
     }
 }

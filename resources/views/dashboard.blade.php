@@ -31,7 +31,9 @@
         <div class="card border-danger shadow-sm">
             <div class="card-body">
                 <div class="text-muted">Peminjaman Terlambat</div>
-                <div class="fs-2 fw-bold text-danger">1</div>
+                <div class="fs-2 fw-bold text-danger">
+                    {{ $peminjamanTerlambat }}
+                </div>
             </div>
         </div>
     </div>

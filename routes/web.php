@@ -9,6 +9,10 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LoanController;
+use App\Http\Controllers\SuppliersController;
+
+ Route::resource('/suppliers', SuppliersController::class)->only(['index', 'create', 'store']);
+
 
 // Hanya untuk tamu (belum login)
 Route::middleware('guest')->group(function () {
@@ -76,3 +80,4 @@ Route::resource('alat', ItemController::class)->except('show');
 
 
 Route::resource('kategori', CategoryController::class)->except('show');
+

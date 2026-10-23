@@ -6,22 +6,35 @@
     <div class="card-body">
         <form action="{{ route('peminjaman.store') }}" method="POST">
             @csrf
-            <div class="mb-3">
-                <label for="item_id" class="form-label">Alat</label>
-                <select id="item_id" name="item_id" class="form-select
-@error('item_id') is-invalid @enderror">
-                    <option value="">-- Pilih alat --</option>
-                    @foreach ($alatTersedia as $alat)
-                    <option value="{{ $alat->id }}" @selected(old('item_id')==$alat->id)>
-                        {{ $alat->code }} - {{ $alat->name }} (stok: {{
-$alat->stock }})
-                    </option>
-                    @endforeach
-                </select>
-                @error('item_id')
-                <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+
+<div class="mb-3">
+    <label class="form-label">Pilih Alat dan Jumlah</label>
+
+    @foreach ($alatTersedia as $alat)
+        <div class="row align-items-center mb-2">
+            <div class="col-md-8">
+                <label for="item_{{ $alat->id }}" class="form-label mb-0">
+                    {{ $alat->code }} - {{ $alat->name }}
+                    (Stok: {{ $alat->stock }})
+                </label>
             </div>
+
+            <div class="col-md-4">
+                <input
+                    type="number"
+                    id="item_{{ $alat->id }}"
+                    name="items[{{ $alat->id }}]"
+                    min="0"
+                    max="{{ $alat->stock }}"
+                    value="{{ old('items.' . $alat->id, 0) }}"
+                    class="form-control"
+                    placeholder="Jumlah (0 = tidak dipinjam)"
+                >
+            </div>
+        </div>
+    @endforeach
+</div>
+
             <div class="row">
                 <div class="col-md-4 mb-3">
                     <label for="qty" class="form-label">Jumlah</label>

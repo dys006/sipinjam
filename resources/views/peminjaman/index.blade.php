@@ -1,12 +1,34 @@
 @extends('layouts.app')
 @section('title', 'Peminjaman')
 @section('content')
+
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h3 class="mb-0">Peminjaman Alat</h3>
     <a href="{{ route('peminjaman.create') }}" class="btn btn-primary">
         <i class="bi bi-plus-lg"></i> Pinjam Alat
     </a>
 </div>
+
+<form method="GET" action="{{ route('peminjaman.index') }}" class="row g-2 mb-3">
+    <div class="col-md-4">
+        <select name="status" class="form-select">
+            <option value="">Semua Status</option>
+            <option value="dipinjam" @selected(request('status')==='dipinjam' )>
+                Dipinjam
+            </option>
+            <option value="dikembalikan" @selected(request('status')==='dikembalikan' )>
+                Dikembalikan
+            </option>
+        </select>
+    </div>
+
+    <div class="col-md-2 d-grid">
+        <button type="submit" class="btn btn-outline-primary">
+            <i class="bi bi-funnel"></i> Filter
+        </button>
+    </div>
+</form>
+
 <div class="card shadow-sm">
     <div class="card-body">
         <table class="table table-striped align-middle mb-0">
