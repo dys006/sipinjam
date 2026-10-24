@@ -20,6 +20,9 @@ class ItemController extends Controller
         if ($request->filled('kategori')) {
             $query->where('category_id', $request->kategori);
         }
+        if ($request->boolean('tersedia')) {
+            $query->available();
+        }
         return ItemResource::collection($query->paginate(10)->withQueryString());
     }
     public function show(Item $alat)

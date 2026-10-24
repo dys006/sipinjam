@@ -59,6 +59,11 @@ Pastikan Laragon (Apache dan MySQL) sudah menyala sebelum memulai.
 | Admin     | admin@sipinjam.test | password |
 | Mahasiswa | mhs@sipinjam.test   | password |
 
+## Tampilan Aplikasi
+![Dashboard](docs/images/dashboard.png)
+![Daftar Alat](docs/images/daftar_alat.png)
+![Form Peminjaman](docs/images/peminjaman.png)
+
 ## Endpoint API
 
 Semua alamat diawali `/api`.
@@ -77,6 +82,36 @@ Semua alamat diawali `/api`.
 | POST   | /api/alat       | Tambah alat                              | Token admin |
 | PUT    | /api/alat/{id}  | Ubah alat                                | Token admin |
 | DELETE | /api/alat/{id}  | Hapus alat                               | Token admin |
+
+### Contoh Respons `GET /api/alat`
+
+```json
+{
+    "data": [
+        {
+            "id": 13,
+            "code": "ALT-5389",
+            "name": "Arduino Uno GK-36",
+            "stock": 2,
+            "available": true,
+            "stock_label": "Menipis",
+            "location": "Rak A2",
+            "category": "Alat Ukur"
+        }
+    ],
+    "links": {
+        "first": "http://sipinjam.test/api/alat?page=1",
+        "last": "http://sipinjam.test/api/alat?page=4",
+        "prev": null,
+        "next": "http://sipinjam.test/api/alat?page=2"
+    },
+    "meta": {
+        "current_page": 1,
+        "last_page": 4,
+        "per_page": 10
+    }
+}
+```
 
 Token dikirim lewat header `Authorization: Bearer <token>`.
 

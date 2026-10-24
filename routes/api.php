@@ -27,6 +27,7 @@ Route::name('api.')->group(function () {
                 'index',
                 'show'
             ]);
+            Route::patch('/peminjaman/{peminjaman}/kembali', [LoanController::class, 'kembali'])->name('peminjaman.kembali');
         });
     });
 });

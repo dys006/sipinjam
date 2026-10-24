@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\LoanResource;
 use App\Models\Item;
+use App\Models\Loan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -47,5 +48,27 @@ class LoanController extends Controller
         return (new LoanResource($peminjaman->load('items')))
             ->response()
             ->setStatusCode(201);
+    }
+    public function kembali(Loan $peminjaman)
+    {
+        if ($peminjaman->status === 'dikembalikan') {
+            return response()->json([
+                'message' => 'Peminjaman ini sudah dikembalikan.',
+            ], 422);
+        }
+
+        DB::transaction(function () use ($peminjaman) {
+            // Kembalikan stok setiap alat sesuai jumlah yang dipinjam
+            foreach ($peminjaman->items as $alat) {
+                $alat->increment('stock', $alat->pivot->qty);
+            }
+
+            $peminjaman->update([
+                'status' => 'dikembalikan',
+                'returned_at' => today(),
+            ]);
+        });
+
+        return new LoanResource($peminjaman->load('items'));
     }
 }
