@@ -1,0 +1,738 @@
+{
+  "info": {
+    "_postman_id": "c060245b-0f1f-4aa3-8671-c148dfe2371a",
+    "name": "SiPinjam API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "59125838",
+    "_collection_link": "https://go.postman.co/collection/59125838-c060245b-0f1f-4aa3-8671-c148dfe2371a?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "{{base_url}}/halo",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/halo",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "halo"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "{{base_url}}/profil",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/profil",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "profil"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "{{base_url}}/tambah",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/tambah/10/25",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "tambah",
+            "10",
+            "25"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "{{base_url}}/kategori",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/kategori",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "kategori"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "{{base_url}}/alat",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/alat",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "alat"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "{{base_url}}/alat?cari=multi",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/alat?cari=multi",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "alat"
+          ],
+          "query": [
+            {
+              "key": "cari",
+              "value": "multi"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/alat/1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "alat",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "{{base_url}}/alat/999",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/alat/999",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "alat",
+            "999"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "{{base_url}}/alat?page=2",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/alat?page=2",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "alat"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "{{base_url}}/alat?kategori=1",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/alat?kategori=1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "alat"
+          ],
+          "query": [
+            {
+              "key": "kategori",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "{{base_url}}/alat",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n \"category_id\": 1,\r\n \"code\": \"LG-01\",\r\n \"name\": \"Logic Analyzer\",\r\n \"stock\": 3,\r\n \"location\": \"Lemari B1\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/alat",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "alat"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "{{base_url}}/alat",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n \"category_id\": 1,\r\n \"code\": \"LG-01\",\r\n \"name\": \"Logic Analyzer\",\r\n \"stock\": 3,\r\n \"location\": \"Lemari B1\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/alat",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "alat"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "{{base_url}}/alat/{id alat baru}",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n \"category_id\": 1,\r\n \"code\": \"LG-01\",\r\n \"name\": \"Logic Analyzer\",\r\n \"stock\": 3,\r\n \"location\": \"Lemari B1\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/alat/1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "alat",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "{{base_url}}/alat",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n \"category_id\": 2,\r\n \"code\": \"ALT-25\",\r\n \"name\": \"Arduino Nano\",\r\n \"stock\": 3,\r\n \"location\": \"Lemari C2\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/alat",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "alat"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "{{base_url}}/alat",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n \"category_id\": 2,\r\n \"code\": \"ALT-25\",\r\n \"name\": \"Arduino Nano\",\r\n \"stock\": 3,\r\n \"location\": \"Lemari C2\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/alat",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "alat"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "{{base_url}}/alat/2",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n \"category_id\": 2,\r\n \"code\": \"ALT-25\",\r\n \"name\": \"Arduino Nano\",\r\n \"stock\": 3,\r\n \"location\": \"Lemari C2\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/alat/45",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "alat",
+            "45"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "{{base_url}}/alat/all",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "{{base_url}}/alat/44",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n \"category_id\": 1,\r\n \"code\": \"LG-01\",\r\n \"name\": \"Logic Analyzer\",\r\n \"stock\": 3,\r\n \"location\": \"Lemari B1\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/alat/44",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "alat",
+            "44"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Hapus",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/alat/44",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "alat",
+            "44"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "stock label",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/alat/13",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "alat",
+            "13"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Stock habis",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"category_id\": 1,\r\n    \"code\": \"ALT-5389\",\r\n    \"name\": \"Arduino Uno GK-36\",\r\n    \"stock\": 2,\r\n    \"location\": \"Rak A2\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/alat/13",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "alat",
+            "13"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST tanpa name",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"category_id\": 1,\r\n    \"code\": \"TS-02\",\r\n    \"name\": \"Alat Tes\",\r\n    \"stock\": \"lima\",\r\n    \"location\": \"Lemari B1\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/alat",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "alat"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\": \"mhs@sipinjam.test\", \"password\":\r\n\"password\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/login",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "uji /me",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/me",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "me"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "logout",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/logout",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "logout"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "uji logout",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/logout",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "logout"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login admin",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "   {\r\n       \"email\": \"admin@sipinjam.test\",\r\n       \"password\": \"password\"\r\n   }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/login",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Hapus",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/alat/41",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "alat",
+            "41"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "peminjaman",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/peminjaman",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "peminjaman"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "stock alat 1 berrkurang",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/alat/1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "alat",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "riwayat peminjaman",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "qty > stock",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"item_id\": 1,\r\n    \"qty\": 1,\r\n    \"due_date\": \"2026-11-02\",\r\n    \"notes\": \"Tes stok\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/peminjaman",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "peminjaman"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "mhs2",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"dhiya@gmail.com\",\r\n    \"password\": \"12242006\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/login",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "pinjam mhs2",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": ""
+    },
+    {
+      "key": "token",
+      "value": ""
+    }
+  ]
+}
