@@ -14,7 +14,7 @@ Pastikan Laragon (Apache dan MySQL) sudah menyala sebelum memulai.
 1. Clone repository:
 
    ```
-   git clone https://github.com/USERNAME_KAMU/sipinjam.git
+   git clone https://github.com/dys006/sipinjam.git
    cd sipinjam
    ```
 
